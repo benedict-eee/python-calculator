@@ -1,0 +1,62 @@
+try:
+    number1 = float(input("Please input the first number:"))
+except ValueError:
+    print("❌ Invalid number!")
+
+answer = number1
+
+try:
+  while True:
+     operation = input("Please choose any of this functions: +, -, x, / or input q to quit")
+
+     if operation == "+":
+         answer = number1
+         try:
+            number2 = float(input("Please input the next number:"))
+         except ValueError:
+             print("❌ Invalid number!")
+             break
+         answer += number2
+
+     elif operation == "-":
+         answer = number1
+         try:
+            number2 = float(input("Please input the next number:"))
+         except ValueError:
+             print("❌ Invalid number!")
+             break
+         answer = answer - number2
+
+     elif operation == "x":
+         answer = number1
+         try:
+            number2 = float(input("Please input the next number:"))
+         except ValueError:
+             print("❌ Invalid number!")
+             break
+         answer = answer * number2
+
+     elif operation == "/":
+         answer = number1
+         try:
+            number2 = float(input("Please input the next number:"))
+         except ValueError:
+             print("❌ Invalid number!")
+             break
+         try:
+             answer = answer / number2
+         except ZeroDivisionError:
+             print("No number can be divided by 0")
+             continue
+
+     elif operation == "q":
+         break
+    
+     else:
+         print("This is not an operation")
+
+except ValueError:
+    print("This is not an integer")
+
+print("Your answer is ", answer)
+     
