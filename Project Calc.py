@@ -1,16 +1,18 @@
-try:
+def calc():
+ try:
     number1 = float(input("Please input the first number:"))
-except ValueError:
+ except ValueError:
     print("❌ Invalid number!")
 
-answer = number1
+ answer = number1
+ print("Your answer is ", answer)
 
-try:
+
+ try:
   while True:
      operation = input("Please choose any of this functions: +, -, x, / or input q to quit")
 
      if operation == "+":
-         answer = number1
          try:
             number2 = float(input("Please input the next number:"))
          except ValueError:
@@ -19,7 +21,6 @@ try:
          answer += number2
 
      elif operation == "-":
-         answer = number1
          try:
             number2 = float(input("Please input the next number:"))
          except ValueError:
@@ -28,7 +29,6 @@ try:
          answer = answer - number2
 
      elif operation == "x":
-         answer = number1
          try:
             number2 = float(input("Please input the next number:"))
          except ValueError:
@@ -37,7 +37,6 @@ try:
          answer = answer * number2
 
      elif operation == "/":
-         answer = number1
          try:
             number2 = float(input("Please input the next number:"))
          except ValueError:
@@ -55,8 +54,20 @@ try:
      else:
          print("This is not an operation")
 
-except ValueError:
+ except ValueError:
     print("This is not an integer")
 
-print("Your answer is ", answer)
-     
+ print("Your answer is ", answer)
+
+
+
+while True:
+       calc()
+       per = str(input("Do you want to perform another calculation: Yes/No"))
+         
+       if per == "Yes":
+          calc
+       elif per == "No":
+          break
+       else:
+          print("❌ The input is not valid!")
